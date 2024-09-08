@@ -5,13 +5,13 @@ export type FGBuildableRadarTowerBag = z.infer<typeof FGBuildableRadarTower.sche
 export default class FGBuildableRadarTower {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableRadarTower'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableRadarTower\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableRadarTowerBag) {
         this.#nativeClass = data.NativeClass;

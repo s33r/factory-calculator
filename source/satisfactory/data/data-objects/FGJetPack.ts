@@ -5,13 +5,13 @@ export type FGJetPackBag = z.infer<typeof FGJetPack.schema>;
 export default class FGJetPack {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGJetPack'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGJetPack\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGJetPackBag) {
         this.#nativeClass = data.NativeClass;

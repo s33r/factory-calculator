@@ -5,13 +5,13 @@ export type FGBuildablePowerStorageBag = z.infer<typeof FGBuildablePowerStorage.
 export default class FGBuildablePowerStorage {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildablePowerStorage'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildablePowerStorage\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildablePowerStorageBag) {
         this.#nativeClass = data.NativeClass;

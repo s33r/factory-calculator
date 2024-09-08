@@ -5,13 +5,13 @@ export type FGBuildableFactorySimpleProducerBag = z.infer<typeof FGBuildableFact
 export default class FGBuildableFactorySimpleProducer {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableFactorySimpleProducer'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableFactorySimpleProducer\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableFactorySimpleProducerBag) {
         this.#nativeClass = data.NativeClass;

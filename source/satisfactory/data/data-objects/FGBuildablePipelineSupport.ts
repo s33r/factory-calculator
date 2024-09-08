@@ -5,13 +5,13 @@ export type FGBuildablePipelineSupportBag = z.infer<typeof FGBuildablePipelineSu
 export default class FGBuildablePipelineSupport {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildablePipelineSupport'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildablePipelineSupport\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildablePipelineSupportBag) {
         this.#nativeClass = data.NativeClass;

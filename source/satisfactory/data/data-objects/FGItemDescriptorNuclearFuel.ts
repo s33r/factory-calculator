@@ -5,13 +5,13 @@ export type FGItemDescriptorNuclearFuelBag = z.infer<typeof FGItemDescriptorNucl
 export default class FGItemDescriptorNuclearFuel {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGItemDescriptorNuclearFuel'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGItemDescriptorNuclearFuel\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGItemDescriptorNuclearFuelBag) {
         this.#nativeClass = data.NativeClass;

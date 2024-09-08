@@ -5,13 +5,13 @@ export type FGBuildableSnowDispenserBag = z.infer<typeof FGBuildableSnowDispense
 export default class FGBuildableSnowDispenser {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableSnowDispenser'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableSnowDispenser\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableSnowDispenserBag) {
         this.#nativeClass = data.NativeClass;

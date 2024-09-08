@@ -12,6 +12,11 @@ export default class FGSchematic {
             ClassName              : z.string(),
             FullName               : z.string(),
             mType                  : schematicTypeEnum,
+            mUnlockName            : z.string().optional(),
+            mUnlockDescription     : z.string().optional(),
+            mUnlockIconBig         : z.string().optional(),
+            mUnlockIconSmall       : z.string().optional(),
+            mUnlockIconCategory    : z.string().optional(),
             mDisplayName           : z.string(),
             mDescription           : z.string(),
             mSubCategories         : z.string(),
@@ -21,7 +26,15 @@ export default class FGSchematic {
             mTimeToComplete        : decimalString,
             mRelevantShopSchematics: z.string(),
             mIsPlayerSpecific      : booleanString,
-            mUnlocks               : z.array(z.object({
+            mSchematicIcon         : z.string(),
+            mSmallSchematicIcon    : z.string(),
+            mSchematicDependencies : z.array(z.object({
+                Class                             : z.string(),
+                mGamePhase                        : gamePhaseEnum.optional(),
+                mSchematics                       : z.string().optional(),
+                mRequireAllSchematicsToBePurchased: booleanString.optional(),
+            }).strict()),
+            mUnlocks: z.array(z.object({
                 Class                        : z.string(),
                 mRecipes                     : z.string().optional(),
                 mResourcesToAddToScanner     : z.string().optional(),
@@ -34,19 +47,11 @@ export default class FGSchematic {
                 mNumArmEquipmentSlotsToUnlock: z.number({ coerce: true }).optional(),
                 mNumInventorySlotsToUnlock   : z.number({ coerce: true }).optional(),
             }).strict()),
-            mSchematicIcon        : z.string(),
-            mSmallSchematicIcon   : z.string(),
-            mSchematicDependencies: z.array(z.object({
-                Class                             : z.string(),
-                mGamePhase                        : gamePhaseEnum.optional(),
-                mSchematics                       : z.string().optional(),
-                mRequireAllSchematicsToBePurchased: booleanString.optional(),
-            }).strict()),
             mDependenciesBlocksSchematicAccess: booleanString,
             mHiddenUntilDependenciesMet       : booleanString,
             mRelevantEvents                   : z.string(),
             mIncludeInBuilds                  : includeInBuildsEnum,
-        });
+        }).strict();
     }
 
     readonly #nativeClass: string;

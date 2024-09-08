@@ -5,13 +5,13 @@ export type FGBuildablePipeReservoirBag = z.infer<typeof FGBuildablePipeReservoi
 export default class FGBuildablePipeReservoir {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildablePipeReservoir'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildablePipeReservoir\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildablePipeReservoirBag) {
         this.#nativeClass = data.NativeClass;

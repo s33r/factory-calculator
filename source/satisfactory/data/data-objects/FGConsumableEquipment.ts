@@ -5,13 +5,13 @@ export type FGConsumableEquipmentBag = z.infer<typeof FGConsumableEquipment.sche
 export default class FGConsumableEquipment {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGConsumableEquipment'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGConsumableEquipment\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGConsumableEquipmentBag) {
         this.#nativeClass = data.NativeClass;

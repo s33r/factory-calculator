@@ -5,13 +5,13 @@ export type FGBuildableConveyorLiftBag = z.infer<typeof FGBuildableConveyorLift.
 export default class FGBuildableConveyorLift {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableConveyorLift'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableConveyorLift\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableConveyorLiftBag) {
         this.#nativeClass = data.NativeClass;

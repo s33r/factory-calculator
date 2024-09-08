@@ -9,11 +9,16 @@ export const stackSizeEnum = z.enum([
     'SS_FLUID',
 ]);
 
-export const formEnum = z.enum(['RF_SOLID', 'RF_LIQUID', 'RF_INVALID']);
+export const formEnum = z.enum([
+    'RF_SOLID',
+    'RF_LIQUID',
+    'RF_INVALID',
+    'RF_GAS',
+]);
 export const scannableTypeEnum = z.enum(['RTWOT_Default', 'RTWOT_WeakSignal']);
 export const dockableStatesEnum = z.enum(['DS_UNDOCKED']);
 export const itemTransferEnum = z.enum(['ITS_NONE']);
-export const occlusionShapeEnum = z.enum(['ROCS_Box']);
+export const occlusionShapeEnum = z.enum(['ROCS_Box', 'ROCS_Ramp']);
 export const customScaleTypeEnum = z.enum(['ROCSS_Center']);
 export const schematicTypeEnum = z.enum([
     'EST_Custom',
@@ -34,3 +39,5 @@ export const wallTypeEnum = z.enum([
     'BWT_DiagonalDown',
     'BWT_DiagonalUp',
 ]);
+
+export const easingFunctionEnum = z.enum(['ExpoInOut', 'Linear']);

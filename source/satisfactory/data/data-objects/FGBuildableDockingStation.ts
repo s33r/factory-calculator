@@ -5,13 +5,13 @@ export type FGBuildableDockingStationBag = z.infer<typeof FGBuildableDockingStat
 export default class FGBuildableDockingStation {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableDockingStation'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableDockingStation\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableDockingStationBag) {
         this.#nativeClass = data.NativeClass;

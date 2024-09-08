@@ -5,13 +5,13 @@ export type FGBuildableTrainPlatformCargoBag = z.infer<typeof FGBuildableTrainPl
 export default class FGBuildableTrainPlatformCargo {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableTrainPlatformCargo'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableTrainPlatformCargo\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableTrainPlatformCargoBag) {
         this.#nativeClass = data.NativeClass;

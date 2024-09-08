@@ -5,13 +5,13 @@ export type FGEquipmentZiplineBag = z.infer<typeof FGEquipmentZipline.schema>;
 export default class FGEquipmentZipline {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGEquipmentZipline'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGEquipmentZipline\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGEquipmentZiplineBag) {
         this.#nativeClass = data.NativeClass;

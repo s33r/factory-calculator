@@ -5,13 +5,13 @@ export type FGBuildableJumppadBag = z.infer<typeof FGBuildableJumppad.schema>;
 export default class FGBuildableJumppad {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableJumppad'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableJumppad\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableJumppadBag) {
         this.#nativeClass = data.NativeClass;

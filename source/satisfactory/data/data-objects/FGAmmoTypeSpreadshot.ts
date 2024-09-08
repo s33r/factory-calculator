@@ -5,13 +5,13 @@ export type FGAmmoTypeSpreadshotBag = z.infer<typeof FGAmmoTypeSpreadshot.schema
 export default class FGAmmoTypeSpreadshot {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGAmmoTypeSpreadshot'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGAmmoTypeSpreadshot\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGAmmoTypeSpreadshotBag) {
         this.#nativeClass = data.NativeClass;

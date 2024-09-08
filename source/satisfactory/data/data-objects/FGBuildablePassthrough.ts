@@ -5,13 +5,13 @@ export type FGBuildablePassthroughBag = z.infer<typeof FGBuildablePassthrough.sc
 export default class FGBuildablePassthrough {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildablePassthrough'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildablePassthrough\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildablePassthroughBag) {
         this.#nativeClass = data.NativeClass;

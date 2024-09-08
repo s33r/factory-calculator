@@ -5,13 +5,13 @@ export type FGPortableMinerDispenserBag = z.infer<typeof FGPortableMinerDispense
 export default class FGPortableMinerDispenser {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGPortableMinerDispenser'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGPortableMinerDispenser\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGPortableMinerDispenserBag) {
         this.#nativeClass = data.NativeClass;

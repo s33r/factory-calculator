@@ -5,13 +5,13 @@ export type FGBuildableWalkwayLightweightBag = z.infer<typeof FGBuildableWalkway
 export default class FGBuildableWalkwayLightweight {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableWalkwayLightweight'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableWalkwayLightweight\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableWalkwayLightweightBag) {
         this.#nativeClass = data.NativeClass;

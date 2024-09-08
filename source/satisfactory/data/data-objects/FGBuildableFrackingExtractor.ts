@@ -5,13 +5,13 @@ export type FGBuildableFrackingExtractorBag = z.infer<typeof FGBuildableFracking
 export default class FGBuildableFrackingExtractor {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableFrackingExtractor'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableFrackingExtractor\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableFrackingExtractorBag) {
         this.#nativeClass = data.NativeClass;

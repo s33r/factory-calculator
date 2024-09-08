@@ -5,13 +5,13 @@ export type FGBuildableResourceSinkBag = z.infer<typeof FGBuildableResourceSink.
 export default class FGBuildableResourceSink {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableResourceSink'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableResourceSink\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableResourceSinkBag) {
         this.#nativeClass = data.NativeClass;

@@ -5,13 +5,13 @@ export type FGBuildableLightsControlPanelBag = z.infer<typeof FGBuildableLightsC
 export default class FGBuildableLightsControlPanel {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableLightsControlPanel'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableLightsControlPanel\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableLightsControlPanelBag) {
         this.#nativeClass = data.NativeClass;

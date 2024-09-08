@@ -5,13 +5,13 @@ export type FGConveyorPoleStackableBag = z.infer<typeof FGConveyorPoleStackable.
 export default class FGConveyorPoleStackable {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGConveyorPoleStackable'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGConveyorPoleStackable\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGConveyorPoleStackableBag) {
         this.#nativeClass = data.NativeClass;

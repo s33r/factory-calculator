@@ -5,13 +5,13 @@ export type FGBuildableMAMBag = z.infer<typeof FGBuildableMAM.schema>;
 export default class FGBuildableMAM {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableMAM'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableMAM\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableMAMBag) {
         this.#nativeClass = data.NativeClass;

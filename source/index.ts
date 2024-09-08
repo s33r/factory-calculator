@@ -74,5 +74,6 @@ const generateClasses = async (
     // generateClasses(phase1Data);
 
     const phase2Data = await phase2(phase1Data);
+
     console.log(phase2Data);
 })();

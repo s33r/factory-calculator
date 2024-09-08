@@ -7,7 +7,7 @@ export default class FGBuildablePillarLightweight {
         return z.object({
             NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildablePillarLightweight\''),
             ClassName  : z.string(),
-        });
+        }).strict();
     }
 
     readonly #nativeClass: string;

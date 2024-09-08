@@ -5,13 +5,13 @@ export type FGBuildableLadderBag = z.infer<typeof FGBuildableLadder.schema>;
 export default class FGBuildableLadder {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableLadder'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableLadder\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableLadderBag) {
         this.#nativeClass = data.NativeClass;

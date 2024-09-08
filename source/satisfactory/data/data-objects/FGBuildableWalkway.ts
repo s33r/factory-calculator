@@ -5,13 +5,13 @@ export type FGBuildableWalkwayBag = z.infer<typeof FGBuildableWalkway.schema>;
 export default class FGBuildableWalkway {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableWalkway'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableWalkway\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableWalkwayBag) {
         this.#nativeClass = data.NativeClass;

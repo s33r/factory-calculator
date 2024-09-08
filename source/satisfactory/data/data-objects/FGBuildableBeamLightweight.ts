@@ -5,13 +5,13 @@ export type FGBuildableBeamLightweightBag = z.infer<typeof FGBuildableBeamLightw
 export default class FGBuildableBeamLightweight {
     static get schema() {
         return z.object({
-            NativeClass: z.literal("/Script/CoreUObject.Class'/Script/FactoryGame.FGBuildableBeamLightweight'"),
-            ClassName: z.string(),
-        });
+            NativeClass: z.literal('/Script/CoreUObject.Class\'/Script/FactoryGame.FGBuildableBeamLightweight\''),
+            ClassName  : z.string(),
+        }).strict();
     }
 
     readonly #nativeClass: string;
-    readonly #className: string;
+    readonly #className  : string;
 
     constructor(data: FGBuildableBeamLightweightBag) {
         this.#nativeClass = data.NativeClass;
