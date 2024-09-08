@@ -11,7 +11,8 @@
         "build": "rm -rf lib && tsc",
         "lint": "eslint",
         "docs": "rm -rf docs && typedoc",
-        "ci": "npm run lint && npm run build && npm run docs"
+        "ci": "npm run lint && npm run build && npm run docs",
+        "start": "tsx source/index.js"
     },
     "repository": {
         "type": "git",
@@ -39,6 +40,8 @@
         "typescript-eslint": "^8.3.0"
     },
     "dependencies": {
-        "@ehwillows/results": "^0.0.3"
+        "@ehwillows/results": "^0.0.3",
+        "decimal.js": "^10.4.3",
+        "zod": "^3.23.8"
     }
 }
