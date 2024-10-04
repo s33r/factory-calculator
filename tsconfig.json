@@ -1,6 +1,7 @@
 {
     "include": [
-        "**/source"
+        "**/source",
+        "build.ts",
     ],
     "compilerOptions": {
         // Input
@@ -11,5 +12,8 @@
         "target": "ESNext",
         "outDir": "lib",
         "declaration": true,
+        "jsx": "react",
+        "isolatedModules": true,
+        "esModuleInterop": true,
     }
 }

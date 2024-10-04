@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background-color: #3D3D3D;
+    font-size: 16px;
+}
+
+h2 {
+    border-bottom: solid medium white;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    text-align: center;
+    border: solid thin white;
+    border-bottom-style: double;
+    padding: .5em 1em;
+}
+
+.positive {
+    background-color: lightblue;
+    color: #3D3D3D;
+}
+
+.negative {
+    background-color: lightcoral;
+}
+
+.neutral {
+    background-color: lightgreen;
+    color: #3D3D3D;
+}
+
+.even td {
+    background-color: lightblue;
+    color: #3D3D3D;
+}
